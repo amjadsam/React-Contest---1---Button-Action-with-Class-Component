@@ -7,16 +7,19 @@ class App extends Component {
 		this.state={
 			count:0
 		};
+		
 	};
-	clickFun=()=>{
-     this.setState({count:this.state.count+1});
+	clickFun()
+	{
+     this.setState({count:this.state.count+1})
 	}
+	
     render() {
     	return(
     		<div id="main">
 				{ /* Do not remove this main div!! */ }
-    		<button id="click" onClick={this.clickFun} >click</button>
-			{this.state.count===1?<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>:null}
+    		<button id="click" onClick={this.clickFun.bind(this)} >click</button>
+			{this.state.count!==0?<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>:null}
 			</div>
     	);
     }
